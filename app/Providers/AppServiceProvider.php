@@ -7,6 +7,7 @@ use App\Models\Sale;
 use App\Observers\PurchaseObserver;
 use App\Observers\SaleObserver;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
+
         Purchase::observe(PurchaseObserver::class);
         Sale::observe(SaleObserver::class);
     }
