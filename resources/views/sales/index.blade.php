@@ -76,7 +76,7 @@
                         </div>
                     </form>
 
-                    <form id="batch-receipt-form" method="GET" action="{{ route('sales.batch-receipt') }}" target="_blank">
+                    <form id="batch-receipt-form" method="GET" action="{{ route('sales.batch-receipt') }}" target="_blank"></form>
                     <div class="overflow-x-auto rounded-lg border border-slate-200">
                         <table class="min-w-full divide-y divide-slate-200">
                             <thead class="bg-slate-800">
@@ -98,7 +98,7 @@
                                 @forelse($sales as $sale)
                                     <tr class="hover:bg-slate-50 transition-colors">
                                         <td class="px-4 py-4 whitespace-nowrap text-center">
-                                            <input type="checkbox" name="ids[]" value="{{ $sale->id }}"
+                                            <input type="checkbox" name="ids[]" value="{{ $sale->id }}" form="batch-receipt-form"
                                                    class="sale-checkbox rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-700">{{ $sale->sale_date->format('d-m-Y') }}</td>
@@ -110,7 +110,7 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">{{ number_format($sale->quantity, 2, ',', '.') }} {{ $sale->unit }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">Rp {{ number_format($sale->price_per_unit, 2, ',', '.') }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-extrabold text-emerald-700">Rp {{ number_format($sale->total_price, 2, ',', '.') }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-emerald-700">Rp {{ number_format($sale->total_price, 2, ',', '.') }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{{ $sale->buyer ?? '—' }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <a href="{{ route('sales.receipt', $sale) }}" target="_blank"
@@ -140,7 +140,6 @@
                             </tbody>
                         </table>
                     </div>
-                    </form>
 
                     <div class="mt-4">
                         {{ $sales->links() }}
