@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-bold text-xl text-slate-800 leading-tight">
-            📊 Dashboard Laporan Keuangan
+             Dashboard Laporan Keuangan
         </h2>
     </x-slot>
 
@@ -64,7 +64,7 @@
                     <div class="p-6 text-white">
                         <div class="flex items-center justify-between mb-3">
                             <p class="text-xs font-bold uppercase tracking-widest text-indigo-200">Total Modal Masuk</p>
-                            <span class="text-3xl">💰</span>
+                            <span class="text-3xl"></span>
                         </div>
                         <p class="text-2xl font-extrabold">Rp {{ number_format($totalCapital, 2, ',', '.') }}</p>
                         <a href="{{ route('capitals.index') }}"
@@ -79,7 +79,7 @@
                     <div class="p-6 text-white">
                         <div class="flex items-center justify-between mb-3">
                             <p class="text-xs font-bold uppercase tracking-widest text-rose-200">Total Pembelian (HPP)</p>
-                            <span class="text-3xl">🛒</span>
+                            <span class="text-3xl"></span>
                         </div>
                         <p class="text-2xl font-extrabold">Rp {{ number_format($totalPurchases, 2, ',', '.') }}</p>
                         <a href="{{ route('purchases.index') }}"
@@ -94,7 +94,7 @@
                     <div class="p-6 text-white">
                         <div class="flex items-center justify-between mb-3">
                             <p class="text-xs font-bold uppercase tracking-widest text-emerald-200">Total Penjualan (Omzet)</p>
-                            <span class="text-3xl">📈</span>
+                            <span class="text-3xl"></span>
                         </div>
                         <p class="text-2xl font-extrabold">Rp {{ number_format($totalSales, 2, ',', '.') }}</p>
                         <a href="{{ route('sales.index') }}"
@@ -111,7 +111,7 @@
                             <p class="text-xs font-bold uppercase tracking-widest {{ $profit >= 0 ? 'text-teal-200' : 'text-orange-200' }}">
                                 Laba / Rugi Kotor
                             </p>
-                            <span class="text-3xl">{{ $profit >= 0 ? '✅' : '⚠️' }}</span>
+                            <span class="text-3xl">{{ $profit >= 0 ? '' : '' }}</span>
                         </div>
                         <p class="text-2xl font-extrabold">
                             {{ $profit >= 0 ? '+' : '' }}Rp {{ number_format($profit, 2, ',', '.') }}
@@ -125,7 +125,7 @@
                     <div class="p-6 text-white">
                         <div class="flex items-center justify-between mb-3">
                             <p class="text-xs font-bold uppercase tracking-widest text-slate-300">Modal Berjalan (All Time)</p>
-                            <span class="text-3xl">🏦</span>
+                            <span class="text-3xl"></span>
                         </div>
                         <p class="text-3xl font-extrabold">Rp {{ number_format($runningCapital, 2, ',', '.') }}</p>
                         <p class="mt-1 text-xs text-slate-400">= Total Modal + (Akumulasi Penjualan − Pembelian)</p>
@@ -136,7 +136,7 @@
             {{-- Grafik Tren Bulanan --}}
             <div class="bg-white overflow-hidden shadow-sm rounded-xl border border-slate-200">
                 <div class="p-6">
-                    <h3 class="text-base font-bold text-slate-800 mb-1">📉 Tren Keuangan (6 Bulan Terakhir)</h3>
+                    <h3 class="text-base font-bold text-slate-800 mb-1"> Tren Keuangan (6 Bulan Terakhir)</h3>
                     <p class="text-xs text-slate-500 mb-4">Perbandingan pemasukan penjualan vs pengeluaran pembelian per bulan.</p>
                     <div style="height: 300px; position: relative;">
                         <canvas id="financialChart"></canvas>
@@ -149,7 +149,7 @@
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-5">
                         <div>
-                            <h3 class="text-base font-bold text-slate-800">🕒 5 Transaksi Terbaru</h3>
+                            <h3 class="text-base font-bold text-slate-800"> Transaksi Terbaru</h3>
                             <p class="text-xs text-slate-500 mt-0.5">Transaksi pembelian dan penjualan terakhir dicatat.</p>
                         </div>
                         <div class="flex gap-2">
